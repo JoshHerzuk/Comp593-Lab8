@@ -8,7 +8,16 @@ def get_poke_info(name):
     :param name: Pokemon's name or Pokedex number
     """
     print("Retrieving Pokemon information...", end='')
+    
+
+    if name is None:
+        return
+
     name = name.lower().strip()
+
+    if name == '':
+        return
+        
     URL = 'https://pokeapi.co/api/v2/pokemon/' + str(name)
    
     response = requests.get(URL)

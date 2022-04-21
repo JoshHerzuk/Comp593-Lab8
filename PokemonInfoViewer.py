@@ -9,13 +9,14 @@ def main():
     root = Tk()
     root.title("Pokemon Info Viewer")
     root.iconbitmap('pokeball.ico')
+    root.resizable(False, False)
 
 #create the frames
     frm_input = ttk.Frame(root)
     frm_input.grid(row=1, column=1, columnspan=2)
 
     frm_stats = ttk.LabelFrame(root, text="Stats")
-    frm_stats.grid(row=2, column=2, padx=10, pady=10)
+    frm_stats.grid(row=2, column=2, padx=10, pady=10, sticky=N)
 
     frm_info = ttk.LabelFrame(root, text="Info")
     frm_info.grid(row=2, column=1, padx=10, pady=10, sticky=N)
@@ -80,18 +81,18 @@ def main():
 
 #populate pokemon info frame
     lbl_height = ttk.Label(frm_info, text="Height:")
-    lbl_height.grid(row=1, column=1, padx=10, pady=10)
-    lbl_height_val = ttk.Label(frm_info, text='TBD')
+    lbl_height.grid(row=1, column=1, padx=10, pady=10, stick=E)
+    lbl_height_val = ttk.Label(frm_info, text='...', width=15)
     lbl_height_val.grid(row=1, column=2)
 
     lbl_weight = ttk.Label(frm_info, text='Weight:')
-    lbl_weight.grid(row=2, column=1, padx=10, pady=10)
-    lbl_weight_val = ttk.Label(frm_info, text="TBD")
+    lbl_weight.grid(row=2, column=1, padx=10, pady=10, stick=E)
+    lbl_weight_val = ttk.Label(frm_info, text="...", width=15)
     lbl_weight_val.grid(row=2, column=2)
 
     lbl_type = ttk.Label(frm_info, text='Type:')
-    lbl_type.grid(row=3, column=1, padx=10, pady=10)
-    lbl_type_val = ttk.Label(frm_info, text="TBD")
+    lbl_type.grid(row=3, column=1, padx=10, pady=10, stick=E)
+    lbl_type_val = ttk.Label(frm_info, text="...", width=15)
     lbl_type_val.grid(row=3, column=2)
     
 
