@@ -1,15 +1,17 @@
 import requests
 
 
-def get_poke_info(poke_name): 
+def get_poke_info(name): 
     """
     queries the poke API for information related to the pokemon specified 
     
     :param name: Pokemon's name or Pokedex number
     """
     print("Retrieving Pokemon information...", end='')
-    URL = 'https://pokeapi.co/api/v2/pokemon/'
-    response = requests.get(URL + poke_name)
+    name = name.lower().strip()
+    URL = 'https://pokeapi.co/api/v2/pokemon/' + str(name)
+   
+    response = requests.get(URL)
 
     if response.status_code == 200:
         print("Success")
